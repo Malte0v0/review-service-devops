@@ -53,12 +53,12 @@ jobs:
     - name: build image
       if: github.event_name == 'push'
       run: |
-        docker build -t ${{secrets.DOCKERHUB_USERNAME}}/customer-service:${{github.run_number}} .
+        docker build -t ${{secrets.DOCKERHUB_USERNAME}}/review-service:${{github.run_number}} .
 
     - name: push to docker hub
       if: github.event_name == 'push'
       run: |
-        docker push ${{secrets.DOCKERHUB_USERNAME}}/customer-service:${{github.run_number}}
+        docker push ${{secrets.DOCKERHUB_USERNAME}}/review-service:${{github.run_number}}
 
     env:
         DB_URL: jdbc:mariadb://localhost:3306/${{secrets.MARIADB_DATABASE}}
