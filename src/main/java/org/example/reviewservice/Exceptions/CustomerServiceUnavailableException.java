@@ -1,0 +1,7 @@
+package org.example.reviewservice.Exceptions;
+
+public class CustomerServiceUnavailableException extends RuntimeException {
+    public CustomerServiceUnavailableException(String message) {
+        super(message);
+    }
+}
